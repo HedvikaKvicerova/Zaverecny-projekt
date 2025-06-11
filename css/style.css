@@ -1,0 +1,270 @@
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+:root {
+    --color-primary: rgb(69, 26, 98);
+    --color-secondary: rgb(113, 55, 150); 
+    --color-dark: rgb(27, 11, 38);
+    --color-light: #F0E5DE;
+    --color-turquoise:  rgb(138, 180, 178);
+    --color-olive: #7B8A2F;
+    --color-green: #8CBF26;
+
+    --font-base: "Quicksand", sans-serif;
+    --font-special: "Indie Flower", cursive;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-base);
+    font-size: 16px;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-special);
+    text-align: center;
+}
+h1 {
+    font-size: 60px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 36px;
+}
+/* 
+.main-title {
+    color: var(--color-primary);
+}  */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.logo {
+    margin: 5px;
+    padding-top: 20px;
+}
+.menu {
+    display: flex;
+}
+.menu__link {
+    display: block;
+    padding: 20px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-family: var(--font-base);
+    font-size: 18px;
+}
+.menu__link:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+.menu__dropdown {
+    padding: 20px;
+    background-color: var(--color-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.menu__checkbox {
+    position: absolute;
+    left: -9999px;
+}
+.dropdown__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+}
+.dropdown__link {
+    display: block;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-family: var(--font-base);
+    font-size: 18px;
+}
+.menu__checkbox:checked ~ .dropdown__list {
+    display: block;
+} 
+.menu__toggler {
+    cursor: pointer;
+}
+
+.footer {
+    margin-top: 40px;
+    padding: 10px 0;
+    background-color: var(--color-dark);
+    text-align: center;
+    color: white;
+    margin-left: -20px;
+    margin-right: -20px;
+    border-radius: 0 0 10px 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* homepage */
+.ref-tile {
+    display: block;
+    text-decoration: none;
+}
+.tile {
+    background-color: var(--color-turquoise);
+    border-radius: 50px;box-shadow: 0 4px 8px rgb(138, 180, 178);
+}
+    
+.tile-descr {
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+.tile__trip-title {
+    margin: 0;
+    font-size: 36px;
+}
+.tile__trip-text {
+    margin-bottom: 0;
+}
+.tile__img {
+    position: relative;
+    overflow: hidden;
+}
+.tile__act-img {
+    width: 100%;
+    border-radius: 0 0 50px 50px; 
+    display: block;
+    height: auto;
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%) ;
+}
+.tiles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media (min-width: 768px) {
+    .tiles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        align-items: stretch;
+    }
+    .tile {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+/* roadtrip 2021*/
+.map {
+    background-color: white;
+    padding: 5px;
+    margin: 0;
+}
+.map__img {
+    width: 100%;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.map__capt {
+    text-align: center;
+    font-size: 12px;
+}
+
+.menu-roadtrip {
+    background-color: var(--color-turquoise);
+    margin: 0;
+    padding: 2px 2px 0 2px;
+}
+.menu-roadtrip__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu-roadtrip__item {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.menu-roadtrip__item:not(:last-child) {
+  border-bottom: 1px solid silver;
+}
+.menu-roadtrip__link {
+    display: block;
+    padding: 5px 10px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-family: var(--font-special);
+    color: var(--color-secondary);
+}
+.menu-roadtrip__link:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+/* @media (min-width: 768px) {
+    style pro menu
+    
+} */
+
+.stop__img {
+    width: 100%;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* konec stylu pro roadtrip 2021 */
+
+
+/* kontaktní formulář */
+.form {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+.form__label {
+    display: block;
+    margin-bottom: 3px;
+}
+.form__input {
+    width: 100%;
+    border: 2px solid silver;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+.form__button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-family: var(--font-base);
+}
+.form__button:hover {
+    background-color: var(--color-secondary);
+}
+/* konec kontaktní formulář */
