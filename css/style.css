@@ -7,9 +7,6 @@ html { box-sizing: border-box; }
     --color-dark: rgb(27, 11, 38);
     --color-light: #F0E5DE;
     --color-turquoise:  rgb(138, 180, 178);
-    --color-olive: #7B8A2F;
-    --color-green: #8CBF26;
-
     --font-base: "Quicksand", sans-serif;
     --font-special: "Indie Flower", cursive;
 }
@@ -22,22 +19,19 @@ body {
     background-color: var(--color-light);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
     font-family: var(--font-special);
     text-align: center;
     color: var(--color-primary);
 }
 h1 {
-    font-size: 60px;
+    font-size: 64px;
     font-weight: 700;
 }
 h2 {
     font-size: 36px;
 }
-/* 
-.main-title {
-    color: var(--color-primary);
-}  */
+
   .main-title::after,
   .main-subtitle::after {
 	content: "";
@@ -47,7 +41,9 @@ h2 {
 	margin: 5px auto;
 	background-color: var(--color-turquoise);
 }
-
+.main-title, .main-subtitle--form {
+    margin-top: 0;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -70,7 +66,7 @@ h2 {
     }
 }
 .logo {
-    margin: 5px;
+    margin: 0 20px 20px 20px;
     padding-top: 20px;
 }
 .menu {
@@ -114,10 +110,9 @@ h2 {
 }
 .dropdown__link {
     float: none;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     text-decoration: none;
     font-family: var(--font-special);
-    font-size: 18px;
     padding: 5px;
     display: block;
     text-align: left;
@@ -144,7 +139,6 @@ h2 {
     border-radius: 0 0 10px 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
-
 
 /* homepage */
 .random-ref {
@@ -201,6 +195,24 @@ h2 {
         height: 100%;
     }
 }
+.tile--coming-soon {
+    position: relative;
+}
+
+.tile--coming-soon::after {
+    content: "Připravujeme...";
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
 
 /* roadtrip 2021*/
 /* mapa a navigace  */
@@ -225,6 +237,7 @@ h2 {
 }
 @media (max-width: 767px) {
     .menu-roadtrip {
+        margin-top: 20px;
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -249,7 +262,6 @@ h2 {
 .menu-roadtrip__link {
     display: block;
     padding: 5px 10px;
-    color: var(--color-primary);
     text-decoration: none;
     font-family: var(--font-special);
     color: var(--color-secondary);
@@ -269,12 +281,20 @@ h2 {
     }
 } 
 /* jednotlivé zastávky */
+.stop {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.stop .main-subtitle:not(:first-child) {
+    margin-top: 0;
+}
 
 .stop {
-    margin-left: -20px;
-    margin-right: -20px;
+    margin: 0 -20px 0 -20px;
     padding-left: 40px;
     padding-right: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .stop--color {
@@ -333,7 +353,6 @@ h2 {
 .copy-btn:hover {
     color: var(--color-primary);
 }
-
 /* konec stylu pro roadtrip 2021 */
 
 
@@ -369,4 +388,14 @@ h2 {
 }
 .form__button:hover {
     background-color: var(--color-secondary);
+}
+/* style pro cestování ve Francii */
+.guide {
+    margin: 0 -20px 0 -20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.menu-roadtrip--guide {
+    margin-left: 20px;
+    margin-right: 20px;
 }
